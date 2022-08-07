@@ -46,35 +46,35 @@ function generatePassword() {
     generatePassword();
   }
 
-  // NOTE
+  // User input will add character options to the pool
   var sourcePool = "";
 
-  // NOTE
+  // Collection of charaters from the random selection from source pool
   var finalPassword = "";
 
-  // NOTE
+  // Adding uppercase characters to pool if user selects UC
   if (uc == true) {
     sourcePool = sourcePool.concat(alphaUC);
   }
 
-  // NOTE
+  // Adding lowercase characters to pool if user selects C
   if (lc == true) {
     sourcePool = sourcePool.concat(alphaLC);
   }
 
-  // NOTE
+  // Adding numeric characters to pool if user selects NUM
   if (num == true) {
     sourcePool = sourcePool.concat(numeric);
   }
 
-  // NOTE
+  // Adding special characters to pool if user selects SC
   if (sc == true) {
     sourcePool = sourcePool.concat(specialCharacter);
   }
   console.log(sourcePool);
   console.log(sourcePool.length);
 
-  // NOTE
+  // Loop and end statement selecting random characters from pool for final password
   for (i = 0; i < desLength; i++) {
     finalPassword = finalPassword.concat(
       sourcePool.charAt(Math.floor(Math.random() * sourcePool.length))
@@ -82,6 +82,6 @@ function generatePassword() {
 
     console.log("Password: " + finalPassword);
   }
-  // NOTE
+  // Returning final password to HTML doc
   return finalPassword;
 }
